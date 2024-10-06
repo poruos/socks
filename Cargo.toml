@@ -1,0 +1,16 @@
+[package]
+name = "socks"
+version = "0.1.0"
+edition = "2021"
+
+[[example]]
+name = "transparent"
+src = "examples/transparent.rs"
+required-features = ["default", "tokio/full"]
+
+[features]
+default = ["tokio/io-util"]
+
+[dependencies]
+bytes = { version = "1", default-features = false }
+tokio = { version = "1", default-features = false, optional = true }
